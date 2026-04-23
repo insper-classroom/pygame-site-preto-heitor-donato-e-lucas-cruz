@@ -1,0 +1,183 @@
+/* ===========================
+   Variáveis e base
+=========================== */
+:root {
+    font-size: 16px;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #0d0d0d;
+    color: #f0e6d2;
+}
+
+/* ===========================
+   Header
+=========================== */
+header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+/* ===========================
+   Main — flex coluna
+=========================== */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3rem;
+    padding: 2rem 4rem;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+/* ===========================
+   Screenshots — flex row
+=========================== */
+.screenshots {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.screenshots article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.screenshots h2 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.screenshots figure {
+    width: 100%;
+    background-color: #2a2a2a;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===========================
+   Sinopse
+=========================== */
+.sinopse h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sinopse p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===========================
+   Vídeo
+=========================== */
+.video h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===========================
+   Log + CRAP — flex row
+=========================== */
+.log-crap {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.log,
+.crap {
+    flex-grow: 1;
+}
+
+.log h2,
+.crap h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.log ul {
+    padding-left: 1.25rem;
+}
+
+.log li {
+    margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   Instruções
+=========================== */
+.instrucoes h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.instrucoes h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.instrucoes ul,
+.instrucoes ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.instrucoes li {
+    margin-bottom: 0.4rem;
+}
+
+/* ===========================
+   Footer — flex row
+=========================== */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    margin-top: 2rem;
+    border-top: 0.0625rem solid #333;
+}
+
+.download a {
+    font-size: 1.1rem;
+    color: #f0e6d2;
+    text-decoration: none;
+    border: 0.0625rem solid #f0e6d2;
+    padding: 0.75rem 1.5rem;
+}
+
+.creditos {
+    text-align: right;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
