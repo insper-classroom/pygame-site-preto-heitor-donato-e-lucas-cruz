@@ -1,43 +1,100 @@
 /* ===========================
-   Variáveis e base
+   Variáveis globais
 =========================== */
 :root {
-    font-size: 16px;
+    font-size: 18px;
+
+    --cor-fundo: #0d0d0d;
+    --cor-texto: #f0e6d2;
+    --cor-acento: #e8890c;
+    --cor-secundaria: #1e1e1e;
+    --cor-borda: #2e2e2e;
 }
 
+/* ===========================
+   Base
+=========================== */
 body {
     font-family: Georgia, serif;
-    background-color: #0d0d0d;
-    color: #f0e6d2;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
 }
 
 /* ===========================
    Header
+   CRAP - Contraste: h1 grande vs subtítulo pequeno
+   CRAP - Alinhamento: centralizado (contexto de título)
 =========================== */
 header {
     text-align: center;
-    padding: 3rem 1rem 2rem;
+    padding: 4rem 1rem 2.5rem;
+    border-bottom: 0.0625rem solid var(--cor-borda);
+    margin-bottom: 1rem;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.2;
+}
+
+/* CRAP - Contraste: rainbow só no HOKAGE, resto neutro */
+.hokage-rainbow {
+    background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff7700,
+        #ffff00,
+        #00cc00,
+        #0066ff,
+        #8b00ff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-sub {
+    font-size: 1rem;
+    color: var(--cor-acento);
+    margin-top: 0.75rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
 }
 
 /* ===========================
    Main — flex coluna
+   CRAP - Proximidade: gap grande entre seções distintas
 =========================== */
 main {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 3rem;
-    padding: 2rem 4rem;
-    max-width: 70rem;
+    gap: 4rem;
+    padding: 3rem 4rem;
+    max-width: 72rem;
     margin: 0 auto;
 }
 
 /* ===========================
+   Títulos de seção
+   CRAP - Repetição: TODA seção usa h2 com borda esquerda laranja
+   CRAP - Contraste: acento laranja vs fundo escuro
+=========================== */
+main h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+    padding-left: 0.75rem;
+    border-left: 0.2rem solid var(--cor-acento);
+    color: var(--cor-texto);
+}
+
+/* ===========================
    Screenshots — flex row
+   CRAP - Repetição: 3 cards idênticos em estrutura
+   CRAP - Alinhamento: alinhados à esquerda pelo flex
+   CRAP - Proximidade: gap pequeno entre cards do mesmo grupo
 =========================== */
 .screenshots {
     display: flex;
@@ -49,67 +106,70 @@ main {
 .screenshots article {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     flex-grow: 1;
 }
 
+/* CRAP - Repetição: h2 dos cards menor que h2 de seção — hierarquia consistente */
 .screenshots h2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.75rem;
-    text-align: center;
+    padding-left: 0;
+    border-left: none;
+    color: var(--cor-acento);
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
 }
 
 .screenshots figure {
     width: 100%;
-    background-color: #2a2a2a;
+    background-color: var(--cor-secundaria);
     aspect-ratio: 16 / 9;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0.0625rem solid var(--cor-borda);
 }
 
 .screenshots img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 /* ===========================
    Sinopse
 =========================== */
-.sinopse h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
 .sinopse p {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.9;
+    max-width: 55rem;
 }
 
 /* ===========================
    Vídeo
 =========================== */
-.video h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
 .video-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background-color: #2a2a2a;
+    background-color: var(--cor-secundaria);
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0.0625rem solid var(--cor-borda);
+    color: #555;
+    font-size: 1rem;
 }
 
 /* ===========================
    Log + CRAP — flex row
+   CRAP - Proximidade: os dois agrupados lado a lado, separados do resto
+   CRAP - Alinhamento: divisor vertical entre eles
 =========================== */
 .log-crap {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .log,
@@ -117,46 +177,117 @@ main {
     flex-grow: 1;
 }
 
-.log h2,
-.crap h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
+/* CRAP - Repetição: bullets com cor acento */
 .log ul {
-    padding-left: 1.25rem;
+    list-style: none;
+    padding-left: 0;
 }
 
 .log li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1rem;
+    border-left: 0.0625rem solid var(--cor-borda);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.log time {
+    color: var(--cor-acento);
+    font-size: 0.85rem;
+}
+
+.crap p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #888;
 }
 
 /* ===========================
    Instruções
+   CRAP - Alinhamento: centralizado por pedido explícito
+   CRAP - Proximidade: Como Jogar e Como Instalar agrupados juntos
 =========================== */
+.instrucoes {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .instrucoes h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    align-self: center;
+    border-left: none;
+    border-bottom: 0.0625rem solid var(--cor-acento);
+    padding-left: 0;
+    padding-bottom: 0.5rem;
 }
 
 .instrucoes h3 {
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    margin-top: 1.25rem;
+    margin-bottom: 0.6rem;
+    margin-top: 1.5rem;
+    color: var(--cor-acento);
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
 }
 
 .instrucoes ul,
 .instrucoes ol {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+    text-align: left;
 }
 
 .instrucoes li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.instrucoes ul li::before {
+    content: "▸";
+    color: var(--cor-acento);
+    position: absolute;
+    left: 0;
+}
+
+.instrucoes ol {
+    counter-reset: instrucao;
+}
+
+.instrucoes ol li {
+    counter-increment: instrucao;
+}
+
+.instrucoes ol li::before {
+    content: counter(instrucao) ".";
+    color: var(--cor-acento);
+    position: absolute;
+    left: 0;
+}
+
+/* Seta apontando pro download no footer */
+.seta-download {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--cor-acento);
+    letter-spacing: 0.05rem;
+    animation: pulsa 1.5s ease-in-out infinite;
+}
+
+@keyframes pulsa {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
 }
 
 /* ===========================
    Footer — flex row
+   CRAP - Contraste: botão download destaca em laranja
+   CRAP - Alinhamento: download à esquerda, créditos à direita
+   CRAP - Proximidade: download e créditos separados claramente
 =========================== */
 footer {
     display: flex;
@@ -164,20 +295,37 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
-    margin-top: 2rem;
-    border-top: 0.0625rem solid #333;
+    margin-top: 1rem;
+    border-top: 0.0625rem solid var(--cor-borda);
 }
 
+/* CRAP - Contraste: único elemento laranja sólido na página — chama atenção */
 .download a {
     font-size: 1.1rem;
-    color: #f0e6d2;
+    color: var(--cor-fundo);
     text-decoration: none;
-    border: 0.0625rem solid #f0e6d2;
-    padding: 0.75rem 1.5rem;
+    background-color: var(--cor-acento);
+    padding: 0.85rem 1.75rem;
+    display: inline-block;
+    font-family: Georgia, serif;
+    transition: opacity 0.2s;
+}
+
+.download a:hover {
+    opacity: 0.85;
 }
 
 .creditos {
     text-align: right;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #888;
+}
+
+.creditos p:first-child {
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.25rem;
 }
