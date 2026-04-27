@@ -6,7 +6,7 @@
 
     --cor-fundo: #0d0d0d;
     --cor-texto: #f0e6d2;
-    --cor-acento: #e8890c;
+    --cor-acento: #00ff0d;
     --cor-secundaria: #1e1e1e;
     --cor-borda: #2e2e2e;
 }
@@ -43,12 +43,8 @@ header h1 {
 .hokage-rainbow {
     background: linear-gradient(
         90deg,
-        #ff0000,
-        #ff7700,
-        #ffff00,
-        #00cc00,
-        #0066ff,
-        #8b00ff
+        #00b8cc
+
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
