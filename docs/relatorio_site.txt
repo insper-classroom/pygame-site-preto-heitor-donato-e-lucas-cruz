@@ -1,0 +1,13 @@
+Análise dos Princípios CRAP - PHYGAMES
+
+Contraste
+O uso do contraste no site é eficaz em áreas chave. O botão ciano "VEJA RELAÇÃO" sobressai bem do fundo escuro, evidenciando a ação principal. O título PHYGAMES também tem bom contraste, branco sobre fundo escuro. O texto descritivo abaixo, no entanto, aparece cinzento e pouco legível à primeira vista. Os cartões com números poderiam ter mais contraste também — os números em ciano não atraem tanta atenção quanto seria ideal. Em suma, o site usa o contraste com intenção, mas alguns elementos ficam pouco destacados.
+
+Repetição
+A repetição é notável no site. Os três cartões seguem o mesmo padrão visual: número em ciano, título em branco, descrição em cinza. Isso gera coesão e indica que são itens semelhantes. As cores também se repetem de forma pensada — o ciano surge nos botões e números, o roxo nos adornos. O espaçamento, contudo, varia entre as seções, quebrando a unidade visual que a repetição visa criar. A repetição funciona bem para os componentes mais importantes.
+
+Alinhamento
+O alinhamento é bem aplicado. Os elementos estão visualmente ligados de maneira clara — o título com a descrição, os cartões em linha horizontal, a imagem com o texto na parte de baixo. Não há desalinhamentos ao acaso nem itens que pareçam deslocados. Tudo segue uma estrutura organizada, tornando o layout limpo e hierárquico. Este é um dos pontos fortes do design da página.
+
+Proximidade
+Este é o ponto que demanda mais atenção. As seções estão muito perto umas das outras. O bloco superior com PHYGAMES e o bloco dos cartões deveriam ter mais espaço entre si para criar separação visual. A imagem do jogo na seção final também está muito próxima do texto, necessitando de mais respiro. Há espaço em branco, mas não o suficiente para separar bem os blocos de informação. Mais espaçamento vertical melhoraria a leitura da página.
